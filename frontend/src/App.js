@@ -7,6 +7,7 @@ import User from "./components/User";
 import PrivateRoute from "./components/PrivateRoute";
 import AddProduct from "./components/AddProduct";
 import ViewProduct from "./components/ViewProduct";
+import Cart from "./components/Cart";
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/user" element={<PrivateRoute role='user'><User /></PrivateRoute>} />
         <Route path="/add-product" element={<AddProduct />}/>
         <Route path="/view-products" element={<ViewProduct/>} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
