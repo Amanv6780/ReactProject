@@ -5,8 +5,6 @@ import {
   Button,
   Typography,
   Container,
-  Stack,
-  Select,
   MenuItem,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";

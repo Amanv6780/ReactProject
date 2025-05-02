@@ -46,7 +46,7 @@ app.post('/api/login', async (req, res) => {
 //Auth Middleware
 const authMiddleware = (role = []) => {
   return (req, res, next) => {
-    const token = req.headers.authorization?.split(" ")[0];
+    const token = req.headers.authorization?.split(" ")[1];
 
     if (!token) return res.status(401).json({ message: "Unauthorized" });
     jwt.verify(token, "jwt-secret", (err, user) => {
@@ -80,6 +80,8 @@ app.get("/api/users", authMiddleware(["admin"]), async (req, res) => {
   }
 });
 
+
+// used to display welcome message
 app.get("/api/user", authMiddleware(["user"]), async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("name");
@@ -89,16 +91,7 @@ app.get("/api/user", authMiddleware(["user"]), async (req, res) => {
   }
 });
 
-// // Get all registered users (User only)
-// app.get("/api/users", authMiddleware(["user"]), async (req, res) => {
-//   try {
-//     const users = await User.find({}, "-password"); //exclude password field
-//     res.json(users);
-//   } catch (err) {
-//     res.status(500).json({ message: "Server Error" });
-//   }
-// });
-// Add Product (Admin only)
+
 app.post("/api/products", authMiddleware(["admin"]), async (req, res) => {
   const { name, description, category, price } = req.body;
 
