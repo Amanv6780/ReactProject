@@ -3,3 +3,13 @@ Follow these steps  to create react project
 create new folder Name ReactProject or any other
 then create one folder Backend.
 create react app using command "create-react-app frondend" .
+now run npm init -y (to install packages. and create package.json file)
+also install required packages
+npm install 
+then create index.js file in backend folder
+
+create login.js in /frontend/src/components/Login.js
+
+install following dependencies in frondend folder
+
+npm install axios react-router-dom @mui/material @emotion/react @emotion/styled
