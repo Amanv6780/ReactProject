@@ -1,0 +1,5 @@
+Follow these steps  to create react project
+
+create new folder Name ReactProject or any other
+then create one folder Backend.
+create react app using command "create-react-app frondend" .
